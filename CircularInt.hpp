@@ -51,4 +51,5 @@ class CircularInt {
     bool operator==(const CircularInt& other) const;
     bool operator!=(const CircularInt& other) const;
 
+    inline friend ostream& operator<<(ostream& os, const CircularInt& cirInt);
 };
