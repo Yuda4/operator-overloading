@@ -58,6 +58,7 @@
       current = other.current;
       max = other.max;
       min = other.min;
+      return *this;
     }
 
 // defie overloaded + (plus) operator
