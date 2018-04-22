@@ -53,3 +53,9 @@ class CircularInt {
 
     friend ostream& operator<<(ostream& os, const CircularInt& cirInt);
 };
+
+//output stream
+    inline ostream& operator<<(ostream& os, const CircularInt& cirInt){
+        os << cirInt.current;
+        return os;
+    }
