@@ -195,8 +195,9 @@
     }
     
 //output stream
-    ostream& operator<<(ostream& os, const CircularInt& cirInt) {
-    return os << cirInt.current;
+    inline ostream& operator<<(ostream& os, const CircularInt& cirInt){
+        os << cirInt.current;
+        return os;
     }
     
     //comperator
