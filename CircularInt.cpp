@@ -194,12 +194,6 @@
         return result.check(nMember / member.current);;
     }
     
-//output stream
-    inline ostream& operator<<(ostream& os, const CircularInt& cirInt){
-        os << cirInt.current;
-        return os;
-    }
-    
     //comperator
     bool CircularInt::operator< (const CircularInt& other) const{ return this-> current < other.current; }
     bool CircularInt::operator> (const CircularInt& other) const{ return this-> current > other.current; }
