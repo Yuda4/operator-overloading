@@ -195,7 +195,7 @@
     }
     
 //output stream
-    ostream& operator<<(ostream& os, const CircularInt& cirInt) {
+    ostream operator<<(ostream& os, const CircularInt& cirInt) {
     return os << cirInt.current;
     }
     
