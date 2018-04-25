@@ -50,6 +50,14 @@ class CircularInt {
     bool operator>=(const CircularInt& other) const;
     bool operator==(const CircularInt& other) const;
     bool operator!=(const CircularInt& other) const;
+    
+    bool operator< (const int other) const;
+    bool operator> (const int other) const;
+    bool operator<=(const int other) const;
+    bool operator>=(const int other) const;
+    
+    bool operator==(const int other) const;
+    bool operator!=(const int other) const;
 
     friend ostream& operator<<(ostream& os, const CircularInt& cirInt);
 };
