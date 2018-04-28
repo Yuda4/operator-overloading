@@ -69,3 +69,11 @@ class CircularInt {
         os << cirInt.current;
         return os;
     }
+    
+        //int - CircularInt
+    inline bool operator==(const int& nMember, const CircularInt& member){ return nMember == member.current; }
+    inline bool operator!=(const int& nMember, const CircularInt& member){ return nMember != member.current;}
+    inline bool operator< (const int& nMember, const CircularInt& member){ return nMember < member.current; }
+    inline bool operator> (const int& nMember, const CircularInt& member){ return  nMember > member.current;}
+    inline bool operator<=(const int& nMember, const CircularInt& member){ return nMember <= member.current;}
+    inline bool operator>=(const int& nMember, const CircularInt& member){ return nMember >= member.current;}
