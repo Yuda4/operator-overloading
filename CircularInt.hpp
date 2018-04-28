@@ -81,7 +81,8 @@ class CircularInt {
     inline istream& operator>> (istream& is, const CircularInt& cirInt) {
         int current;
         is>>current;
-        check(current);
+	 this-> current =current;
+        check(this->current);
         return is;  
     }  
     
