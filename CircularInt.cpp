@@ -8,9 +8,12 @@
     }
 //constractor copy
     CircularInt::CircularInt(const CircularInt& other){
-      this->min = other.min;
-      this->max = other.max;
-      this->current = other.current;
+      int min = other.min;
+      int max = other.max;
+      int current =other.current;
+      this->min = min;
+      this->max = max;
+      this->current = current;
     }
 
 //fix the circular
@@ -98,15 +101,15 @@
         return result.check(nMember + member.current);;
     }
     
-    CircularInt& CircularInt::operator++(void){ //A++
-         ++(this-> current);
-         return *this;
-    }
-    
-    CircularInt CircularInt::operator++(int unused){ //++A
-         CircularInt post (*this);
+    CircularInt CircularInt::operator++(void){ //A++
+    CircularInt post (*this);
          ++(this-> current);
          return post;
+    }
+    
+    CircularInt& CircularInt::operator++(const int){ //++A
+          ++(this-> current);
+         return *this;
     }
     
 // defie overloaded - (minus) operator
@@ -148,15 +151,16 @@
       return *this;
     }
     
-    CircularInt& CircularInt::operator--(void){ //A--
-         --(this-> current);
-         return *this;
-    }
-    
-    CircularInt CircularInt::operator--(int unused){ //--A
-         CircularInt post (*this);
+    CircularInt CircularInt::operator--(void){ //A--
+    CircularInt post(*this);
+         cout << this->current << " HERE"<< endl;
          --(this-> current);
          return post;
+    }
+    
+    CircularInt& CircularInt::operator--(const int){ //--A
+         --(this-> current);
+         return *this;
     }
 
 // defie overloaded * (multi-) operator
