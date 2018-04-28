@@ -99,13 +99,13 @@
     }
     
     CircularInt& CircularInt::operator++(void){ //A++
-         (this-> current)+= 1;
+         ++(this-> current);
          return *this;
     }
     
     CircularInt CircularInt::operator++(int unused){ //++A
          CircularInt post (*this);
-         (this-> current)+= 1;
+         ++(this-> current);
          return post;
     }
     
@@ -149,13 +149,13 @@
     }
     
     CircularInt& CircularInt::operator--(void){ //A--
-         (this-> current)-= 1;
+         --(this-> current);
          return *this;
     }
     
     CircularInt CircularInt::operator--(int unused){ //--A
          CircularInt post (*this);
-         (this-> current)-= 1;
+         --(this-> current);
          return post;
     }
 
