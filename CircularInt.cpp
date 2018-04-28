@@ -101,15 +101,15 @@
         return result.check(nMember + member.current);;
     }
     
-    CircularInt CircularInt::operator++(void){ //A++
-    CircularInt post (*this);
+    CircularInt& CircularInt::operator++(void){ //A++
          ++(this-> current);
-         return post;
+         return *this;
     }
     
-    CircularInt& CircularInt::operator++(const int){ //++A
-          ++(this-> current);
-         return *this;
+    CircularInt CircularInt::operator++(const int){ //++A
+         CircularInt post (*this);
+         ++(this-> current);
+         return post;
     }
     
 // defie overloaded - (minus) operator
@@ -151,16 +151,16 @@
       return *this;
     }
     
-    CircularInt CircularInt::operator--(void){ //A--
-    CircularInt post(*this);
+    CircularInt& CircularInt::operator--(void){ //A--
+         --(this-> current);
+         return *this;
+    }
+    
+    CircularInt CircularInt::operator--(const int){ //--A
+          CircularInt post(*this);
          cout << this->current << " HERE"<< endl;
          --(this-> current);
          return post;
-    }
-    
-    CircularInt& CircularInt::operator--(const int){ //--A
-         --(this-> current);
-         return *this;
     }
 
 // defie overloaded * (multi-) operator
