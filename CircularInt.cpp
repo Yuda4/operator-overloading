@@ -103,18 +103,14 @@
     
     CircularInt& CircularInt::operator++(void){ //A++
          ++(this-> current);
-        cout<<"Before---> "<<(this-> current)<<endl;
          check(this->current);
-        cout<<"After---> "<<(this-> current)<<endl;
          return *this;
     }
     
     CircularInt CircularInt::operator++(const int){ //++A
          CircularInt post (*this);
          ++(this-> current);
-        cout<<"Before---> "<<(this-> current)<<endl;
          check(this->current);
-        cout<<"After---> "<<(this-> current)<<endl;
          return post;
     }
     
@@ -159,18 +155,14 @@
     
     CircularInt& CircularInt::operator--(void){ //A--
          --(this-> current);
-        cout<<"Before---> "<<(this-> current)<<endl;
-         check(this->current);
-        cout<<"After---> "<<(this-> current)<<endl;
+         check(this-> current);
          return *this;
     }
     
     CircularInt CircularInt::operator--(const int){ //--A
           CircularInt post(*this);
          --(this-> current);
-        cout<<"Before---> "<<(this-> current)<<endl;
          check(this->current);
-        cout<<"After---> "<<(this-> current)<<endl;
          return post;
     }
 
