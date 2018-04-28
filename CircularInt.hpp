@@ -79,10 +79,9 @@ class CircularInt {
     }
     //input stream
     inline istream& operator>> (istream& is, const CircularInt& cirInt) {
-        int min, max, current;
-        is>> min>> max>> current;
-        CircularInt newCirInt(min, max);
-        newCirInt.check(current);
+        int current;
+        is>>current;
+        check(current);
         return is;  
     }  
     
