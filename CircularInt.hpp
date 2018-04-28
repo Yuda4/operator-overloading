@@ -11,6 +11,11 @@ class CircularInt {
 	
     CircularInt(int minimum, int maximum); // c'tor
     CircularInt(const CircularInt& other); // copy c'tor
+    CircularInt(){
+        this-> min = 1;
+        this-> max = 2;
+        this-> current = min;
+    }
 
     CircularInt& check(int); //checking the modulo
     
@@ -79,11 +84,14 @@ class CircularInt {
     }
     //input stream
     inline istream& operator>> (istream& is, const CircularInt& cirInt) {
-        int current;
+      /*  int current;
         is>>current;
 	 this-> current =current;
         check(this->current);
-        return is;  
+        return is;  */
+	is >> cirInt.min >> cirInt.max;
+        cirInt.current = cirInt.min;
+        return is;
     }  
     
     //int - CircularInt
