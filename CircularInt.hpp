@@ -13,7 +13,7 @@ class CircularInt {
     CircularInt(const CircularInt& other); // copy c'tor
     CircularInt(){
         this-> min = 1;
-        this-> max = 2;
+        this-> max = 12;
         this-> current = min;
     }
 
