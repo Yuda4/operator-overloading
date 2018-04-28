@@ -167,6 +167,13 @@
       return result;
     }
     
+    CircularInt CircularInt::operator* (CircularInt& other)const{
+      CircularInt result(*this);
+      result.current *= other.current;
+      result.check(result.current);
+      return result;
+    }
+    
     CircularInt& CircularInt::operator*=(int num){
       this-> current *= num;
       check(this-> current);
@@ -199,6 +206,28 @@
         }
         CircularInt result(*this);
         result.current /= num;
+        result.check(result.current);
+        return result;
+      }catch (const char* msg) {
+        cerr << msg << endl;
+      }
+      return *this;
+    }
+    
+    CircularInt CircularInt::operator/ (CircularInt& other)const{
+      try{
+        if(other.current == 0) {
+          throw "Division by zero is forbidden!";
+        }
+        if(current%other.current != 0) {
+          double divi = (current*1.0)/other.current;
+          ostringstream oss;
+          oss << "There is no number " << divi << " in {" << min << "," << max << "} such that " << divi << "*" << other.current << "=" << current; 
+          string msg = oss.str();
+          throw msg;
+        }
+        CircularInt result(*this);
+        result.current /= other.current;
         result.check(result.current);
         return result;
       }catch (const char* msg) {
