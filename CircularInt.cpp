@@ -239,14 +239,6 @@
     bool CircularInt::operator==(const CircularInt& other) const{ return this-> current == other.current; }
     bool CircularInt::operator!=(const CircularInt& other) const{ return this-> current != other.current; }
     
-    //int - CircularInt
-    inline bool operator==(const int& nMember, const CircularInt& member){ return nMember == member.current; }
-    inline bool operator!=(const int& nMember, const CircularInt& member){ return nMember != member.current;}
-    inline bool operator< (const int& nMember, const CircularInt& member){ return nMember < member.current; }
-    inline bool operator> (const int& nMember, const CircularInt& member){ return  nMember > member.current;}
-    inline bool operator<=(const int& nMember, const CircularInt& member){ return nMember <= member.current;}
-    inline bool operator>=(const int& nMember, const CircularInt& member){ return nMember >= member.current;}
-    
     //CircularInt - int
     bool CircularInt::operator< (const int other) const{ return this-> current < other; }
     bool CircularInt::operator> (const int other) const{ return this-> current > other; }
