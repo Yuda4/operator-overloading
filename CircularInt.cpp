@@ -158,7 +158,6 @@
     
     CircularInt CircularInt::operator--(const int){ //--A
           CircularInt post(*this);
-         cout << this->current << " HERE"<< endl;
          --(this-> current);
          return post;
     }
