@@ -23,8 +23,8 @@ class CircularInt {
     friend CircularInt operator+ (int nMember, CircularInt& member);
     CircularInt& operator+=(int num);
     CircularInt& operator+=(CircularInt& other);
-    CircularInt operator++(void);
-    CircularInt& operator++(const int);
+    CircularInt& operator++(void);
+    CircularInt operator++(const int);
     
     //operator minus
     CircularInt operator- (void)const;
@@ -33,8 +33,8 @@ class CircularInt {
     friend CircularInt operator- (int nMember, CircularInt& member);
     CircularInt& operator-=(int num);
     CircularInt& operator-=(CircularInt& other);
-    CircularInt operator--(void);
-    CircularInt& operator--(const int);
+    CircularInt& operator--(void);
+    CircularInt operator--(const int);
     
     // operator multiplication
     CircularInt operator* (int num)const;
