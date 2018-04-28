@@ -11,8 +11,8 @@ class CircularInt {
 	
     CircularInt(int minimum, int maximum); // c'tor
     CircularInt(const CircularInt& other); // copy c'tor
-    
-    CircularInt& check(int fix); //checking the modulo
+
+    CircularInt& check(int); //checking the modulo
     
     CircularInt operator= (const CircularInt& other); // copy assignment
     CircularInt operator= (const int& num);
@@ -23,8 +23,8 @@ class CircularInt {
     friend CircularInt operator+ (int nMember, CircularInt& member);
     CircularInt& operator+=(int num);
     CircularInt& operator+=(CircularInt& other);
-    CircularInt& operator++(void);
-    CircularInt operator++(int unused);
+    CircularInt operator++(void);
+    CircularInt& operator++(const int);
     
     //operator minus
     CircularInt operator- (void)const;
@@ -33,8 +33,8 @@ class CircularInt {
     friend CircularInt operator- (int nMember, CircularInt& member);
     CircularInt& operator-=(int num);
     CircularInt& operator-=(CircularInt& other);
-    CircularInt& operator--(void);
-    CircularInt operator--(int unused);
+    CircularInt operator--(void);
+    CircularInt& operator--(const int);
     
     // operator multiplication
     CircularInt operator* (int num)const;
