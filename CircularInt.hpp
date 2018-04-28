@@ -62,6 +62,8 @@ class CircularInt {
 
     //output stream
     friend ostream& operator<<(ostream& os, const CircularInt& cirInt);
+    //input stream
+    friend istream& operator>> (istream& is, const CircularInt& cirInt);
 };
 
 //output stream
@@ -69,8 +71,16 @@ class CircularInt {
         os << cirInt.current;
         return os;
     }
+    //input stream
+    inline istream& operator>> (istream& is, const CircularInt& cirInt) {
+        int min, max, current;
+        is>> min>> max>> current;
+        CircularInt newCirInt(min, max);
+        newCirInt.check(current);
+        return is;  
+    }  
     
-        //int - CircularInt
+    //int - CircularInt
     inline bool operator==(const int& nMember, const CircularInt& member){ return nMember == member.current; }
     inline bool operator!=(const int& nMember, const CircularInt& member){ return nMember != member.current;}
     inline bool operator< (const int& nMember, const CircularInt& member){ return nMember < member.current; }
