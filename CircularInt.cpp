@@ -190,14 +190,44 @@
     }
     
      CircularInt& CircularInt::operator/=(int num){
-      this-> current /= num;
-      check(this-> current);
+               try{
+        if(num == 0) {
+          throw "Division by zero is forbidden!";
+        }
+        if(current%num != 0) {
+          double divi = (current*1.0)/num;
+          ostringstream oss;
+          oss << "There is no number " << divi << " in {" << min << "," << max << "} such that " << divi << "*" << num << "=" << current; 
+          string msg = oss.str();
+          throw msg;
+        }
+        this-> current /= num;
+        check(this-> current);
+        return *this;
+      }catch (const char* msg) {
+        cerr << msg << endl;
+      }
       return *this;
     }
     
-    CircularInt operator/(int nMember, CircularInt& member){
+    CircularInt operator/ (int nMember, CircularInt& member){
+         try{
+        if(member.current == 0) {
+          throw "Division by zero is forbidden!";
+        }
+        if(nMember%member.current != 0) {
+          double divi = (nMember*1.0)/member.current;
+          ostringstream oss;
+          oss << "There is no number " << divi << " in {" << member.min << "," << member.max << "} such that " << divi << "*" << member.current << "=" << nMember; 
+          string msg = oss.str();
+          throw msg;
+        }
         CircularInt result(member);
         return result.check(nMember / member.current);;
+      }catch (const char* msg) {
+        cerr << msg << endl;
+      }
+      return member;
     }
     
     //comperator
