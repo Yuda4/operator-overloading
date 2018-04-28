@@ -69,7 +69,7 @@ class CircularInt {
     //output stream
     friend ostream& operator<<(ostream& os, const CircularInt& cirInt);
     //input stream
-    friend istream& operator>> (istream& is, const CircularInt& cirInt);
+    friend istream& operator>> (istream& is, CircularInt& cirInt);
 };
 
 //output stream
@@ -78,7 +78,7 @@ class CircularInt {
         return os;
     }
     //input stream
-    inline istream& operator>> (istream& is, const CircularInt& cirInt) {
+    inline istream& operator>> (istream& is, CircularInt& cirInt) {
         int current;
         is>>current;
 	cirInt.current = current;
