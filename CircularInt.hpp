@@ -14,51 +14,53 @@ class CircularInt {
     
     CircularInt& check(int fix); //checking the modulo
     
-    CircularInt operator=(const CircularInt& other); // copy assignment
+    CircularInt operator= (const CircularInt& other); // copy assignment
+    CircularInt operator= (const int& num);
     
    //operator add
-    CircularInt operator+(int num);
-    CircularInt operator+(CircularInt& other);
-    friend CircularInt operator+(int nMember, CircularInt& member);
+    CircularInt operator+ (int num)const;
+    CircularInt operator+ (CircularInt& other)const;
+    friend CircularInt operator+ (int nMember, CircularInt& member);
     CircularInt& operator+=(int num);
     CircularInt& operator++(void);
     CircularInt operator++(int unused);
     
     //operator minus
-    CircularInt operator-(void);
-    CircularInt operator-(int num);
-    CircularInt operator-(CircularInt& other);
-    friend CircularInt operator-(int nMember, CircularInt& member);
+    CircularInt operator- (void)const;
+    CircularInt operator- (int num)const;
+    CircularInt operator- (CircularInt& other)const;
+    friend CircularInt operator- (int nMember, CircularInt& member);
     CircularInt& operator-=(int num);
     CircularInt& operator--(void);
     CircularInt operator--(int unused);
     
     // operator multiplication
-    CircularInt operator*(int num);
+    CircularInt operator* (int num)const;
     CircularInt& operator*=(int num);
     friend CircularInt operator*(int nMember, CircularInt& member);
     
     //operator division
-    CircularInt operator/(int num);
+    CircularInt operator/ (int num)const;
     CircularInt& operator/=(int num);
     friend CircularInt operator/(int nMember, CircularInt& member);
     
     //comperator
+    //CircularInt - CircularInt
     bool operator< (const CircularInt& other) const;
     bool operator> (const CircularInt& other) const;
     bool operator<=(const CircularInt& other) const;
     bool operator>=(const CircularInt& other) const;
     bool operator==(const CircularInt& other) const;
     bool operator!=(const CircularInt& other) const;
-    
+    //CircularInt - int
     bool operator< (const int other) const;
     bool operator> (const int other) const;
     bool operator<=(const int other) const;
     bool operator>=(const int other) const;
-    
     bool operator==(const int other) const;
     bool operator!=(const int other) const;
 
+    //output stream
     friend ostream& operator<<(ostream& os, const CircularInt& cirInt);
 };
 
